@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -9,23 +9,6 @@ import { Footer } from './components/Footer';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Mouse Glow Movement Handler
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        containerRef.current.style.setProperty('--mouse-x', `${x}px`);
-        containerRef.current.style.setProperty('--mouse-y', `${y}px`);
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   // Section scroll tracker using IntersectionObserver
   useEffect(() => {
@@ -61,9 +44,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="app-container">
-      {/* Background Interactive Glow */}
-      <div className="interactive-glow-bg"></div>
+    <div className="app-container">
 
       {/* Decorative Blur Orbs */}
       <div className="ambient-orb ambient-orb-1"></div>
