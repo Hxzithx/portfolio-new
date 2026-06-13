@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Terminal } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import hasithaPhoto from '../assets/hasitha.jpg';
 
 export const Hero: React.FC = () => {
