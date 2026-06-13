@@ -21,8 +21,6 @@ export const About: React.FC = () => {
             <br />
             &nbsp;&nbsp;role: <span className="code-string">'Intern Software Engineer'</span>,
             <br />
-            &nbsp;&nbsp;company: <span className="code-string">'SOFTO Solution'</span>,
-            <br />
             &nbsp;&nbsp;education: <span className="code-string">'NIBM Undergraduate'</span>,
             <br />
             &nbsp;&nbsp;interests: [<span className="code-string">'Full-stack'</span>, <span className="code-string">'Databases'</span>, <span className="code-string">'Clean Architecture'</span>],
