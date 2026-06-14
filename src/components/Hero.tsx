@@ -42,12 +42,12 @@ export const Hero: React.FC = () => {
             >
               Get in Touch <ArrowRight size={18} />
             </button>
-            <button 
+            {/* <button 
               onClick={() => handleScrollTo('technologies')} 
               className="btn btn-secondary"
             >
               View Technologies
-            </button>
+            </button> */}
           </div>
         </div>
 
