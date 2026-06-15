@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import hasithaPhoto from '../assets/hasitha.jpg';
+import { ScrollReveal } from './ScrollReveal';
 
 export const Hero: React.FC = () => {
   const handleScrollTo = (id: string) => {
@@ -23,38 +24,48 @@ export const Hero: React.FC = () => {
     <section id="home" className="hero-section section">
       <div className="hero-grid">
         <div className="hero-content">
-          <div className="hero-tag">
-            <span className="hero-tag-pulse"></span>
-            Open for Opportunities
-          </div>
-          <h1 className="hero-title">
-            Hi, I'm <br />
-            <span>Hasitha Lakruwan</span>
-          </h1>
-          <h2 className="hero-subtitle">Software Engineer</h2>
-          <p className="hero-desc">
-            Undergraduate software engineering student passionate about designing and building efficient, modern, and reliable web applications. Currently bridging design aesthetics with robust backends.
-          </p>
-          <div className="hero-buttons">
-            <button 
-              onClick={() => handleScrollTo('contact')} 
-              className="btn btn-primary"
-            >
-              Get in Touch <ArrowRight size={18} />
-            </button>
-            {/* <button 
-              onClick={() => handleScrollTo('technologies')} 
-              className="btn btn-secondary"
-            >
-              View Technologies
-            </button> */}
-          </div>
+          <ScrollReveal animation="fade-up" delay={100}>
+            <div className="hero-tag">
+              <span className="hero-tag-pulse"></span>
+              Open for Opportunities
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal animation="fade-up" delay={250}>
+            <h1 className="hero-title">
+              Hi, I'm <br />
+              <span>Hasitha Lakruwan</span>
+            </h1>
+          </ScrollReveal>
+
+          <ScrollReveal animation="fade-up" delay={400}>
+            <h2 className="hero-subtitle">Software Engineer</h2>
+          </ScrollReveal>
+
+          <ScrollReveal animation="fade-up" delay={550}>
+            <p className="hero-desc">
+              Undergraduate software engineering student passionate about designing and building efficient, modern, and reliable web applications. Currently bridging design aesthetics with robust backends.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal animation="fade-up" delay={700}>
+            <div className="hero-buttons">
+              <button 
+                onClick={() => handleScrollTo('contact')} 
+                className="btn btn-primary"
+              >
+                Get in Touch <ArrowRight size={18} />
+              </button>
+            </div>
+          </ScrollReveal>
         </div>
 
         <div className="hero-visual">
-          <div className="hero-avatar-card-simple">
-            <img src={hasithaPhoto} alt="Hasitha Lakruwan" className="hero-photo" />
-          </div>
+          <ScrollReveal animation="zoom-in" delay={300}>
+            <div className="hero-avatar-card-simple">
+              <img src={hasithaPhoto} alt="Hasitha Lakruwan" className="hero-photo" />
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

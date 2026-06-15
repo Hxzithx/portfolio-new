@@ -975,3 +975,48 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  will-change: transform, opacity, filter;
+  transition: 
+    opacity var(--reveal-duration, 0.8s) var(--reveal-ease, cubic-bezier(0.16, 1, 0.3, 1)) var(--reveal-delay, 0s),
+    transform var(--reveal-duration, 0.8s) var(--reveal-ease, cubic-bezier(0.16, 1, 0.3, 1)) var(--reveal-delay, 0s),
+    filter var(--reveal-duration, 0.8s) var(--reveal-ease, cubic-bezier(0.16, 1, 0.3, 1)) var(--reveal-delay, 0s);
+}
+
+.reveal-fade-up {
+  transform: translateY(30px);
+}
+
+.reveal-fade-down {
+  transform: translateY(-30px);
+}
+
+.reveal-fade-left {
+  transform: translateX(30px);
+}
+
+.reveal-fade-right {
+  transform: translateX(-30px);
+}
+
+.reveal-zoom-in {
+  transform: scale(0.95);
+}
+
+.reveal-blur-in {
+  filter: blur(8px);
+}
+
+.reveal-flip-up {
+  transform: perspective(1000px) rotateX(15deg);
+}
+
+/* Active Visible State */
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translate(0) scale(1) rotate(0);
+  filter: blur(0);
+}

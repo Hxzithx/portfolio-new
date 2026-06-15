@@ -1,4 +1,5 @@
 import React from 'react';
+import { ScrollReveal } from './ScrollReveal';
 
 interface ExperienceItem {
   role: string;
@@ -26,15 +27,28 @@ export const Experience: React.FC = () => {
 
   return (
     <section id="experience" className="section">
-      <div className="section-tag">Experience</div>
-      <h2 className="section-title">Work <span>History</span></h2>
-      <p className="section-subtitle">
-        My professional journey, starting with my current internship where I apply my skills in real-world environments.
-      </p>
+      <ScrollReveal animation="fade-up" delay={0}>
+        <div className="section-tag">Experience</div>
+      </ScrollReveal>
+      
+      <ScrollReveal animation="fade-up" delay={100}>
+        <h2 className="section-title">Work <span>History</span></h2>
+      </ScrollReveal>
+      
+      <ScrollReveal animation="fade-up" delay={200}>
+        <p className="section-subtitle">
+          My professional journey, starting with my current internship where I apply my skills in real-world environments.
+        </p>
+      </ScrollReveal>
 
       <div className="timeline">
         {experiences.map((exp, index) => (
-          <div key={index} className="timeline-item">
+          <ScrollReveal 
+            key={index} 
+            animation="fade-up" 
+            delay={index * 150} 
+            className="timeline-item"
+          >
             <div className="timeline-dot">
               <span className="timeline-dot-pulse"></span>
             </div>
@@ -78,7 +92,7 @@ export const Experience: React.FC = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
     </section>

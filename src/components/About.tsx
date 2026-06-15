@@ -1,17 +1,26 @@
 import React from 'react';
 import { BookOpen, Briefcase, Code, GraduationCap } from 'lucide-react';
+import { ScrollReveal } from './ScrollReveal';
 
 export const About: React.FC = () => {
   return (
     <section id="about" className="section">
-      <div className="section-tag">About Me</div>
-      <h2 className="section-title">Bridging Theory <span>& Practice</span></h2>
-      <p className="section-subtitle">
-        A glimpse into who I am, where I study, and my current professional activities.
-      </p>
+      <ScrollReveal animation="fade-up" delay={0}>
+        <div className="section-tag">About Me</div>
+      </ScrollReveal>
+      
+      <ScrollReveal animation="fade-up" delay={100}>
+        <h2 className="section-title">Bridging Theory <span>& Practice</span></h2>
+      </ScrollReveal>
+      
+      <ScrollReveal animation="fade-up" delay={200}>
+        <p className="section-subtitle">
+          A glimpse into who I am, where I study, and my current professional activities.
+        </p>
+      </ScrollReveal>
 
       <div className="about-grid">
-        <div className="about-graphics">
+        <ScrollReveal animation="zoom-in" delay={150} className="about-graphics">
           <div className="about-code-block">
             <span className="code-comment">// A brief representation of myself</span>
             <br />
@@ -37,40 +46,45 @@ export const About: React.FC = () => {
             <br />
             &#125;;
           </div>
-        </div>
+        </ScrollReveal>
 
         <div className="about-text">
-          <p className="about-p">
-            I am an undergraduate Software Engineering student at NIBM, currently doing my internship at SOFTO Solution as an Intern Software Engineer. 
-          </p>
-          <p className="about-p" style={{ fontSize: '1rem', color: 'var(--text-muted)' }}>
-            I am passionate about learning new technologies and applying engineering principles to build robust web systems. Working inside an agile team environment at SOFTO Solution has helped me bridge academic theory with standard enterprise development.
-          </p>
+          <ScrollReveal animation="fade-up" delay={150}>
+            <p className="about-p">
+              I am an undergraduate Software Engineering student at NIBM, currently doing my internship at SOFTO Solution as an Intern Software Engineer. 
+            </p>
+          </ScrollReveal>
+          
+          <ScrollReveal animation="fade-up" delay={250}>
+            <p className="about-p" style={{ fontSize: '1rem', color: 'var(--text-muted)' }}>
+              I am passionate about learning new technologies and applying engineering principles to build robust web systems. Working inside an agile team environment at SOFTO Solution has helped me bridge academic theory with standard enterprise development.
+            </p>
+          </ScrollReveal>
 
           <div className="about-details-grid">
-            <div className="about-detail-card">
+            <ScrollReveal animation="fade-up" delay={100} className="about-detail-card">
               <GraduationCap className="about-detail-icon" size={24} />
               <h3 className="about-detail-title">Education</h3>
               <p className="about-detail-desc">Undergraduate Software Engineering Student at NIBM.</p>
-            </div>
+            </ScrollReveal>
 
-            <div className="about-detail-card">
+            <ScrollReveal animation="fade-up" delay={200} className="about-detail-card">
               <Briefcase className="about-detail-icon" size={24} />
               <h3 className="about-detail-title">Current Position</h3>
               <p className="about-detail-desc">Intern Software Engineer at SOFTO Solution.</p>
-            </div>
+            </ScrollReveal>
 
-            <div className="about-detail-card">
+            <ScrollReveal animation="fade-up" delay={300} className="about-detail-card">
               <Code className="about-detail-icon" size={24} />
               <h3 className="about-detail-title">Fullstack Focus</h3>
               <p className="about-detail-desc">Passionate about React frontends and Laravel backends.</p>
-            </div>
+            </ScrollReveal>
 
-            <div className="about-detail-card">
+            <ScrollReveal animation="fade-up" delay={400} className="about-detail-card">
               <BookOpen className="about-detail-icon" size={24} />
               <h3 className="about-detail-title">Lifelong Learner</h3>
               <p className="about-detail-desc">Constantly exploring advanced architectural concepts.</p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>
