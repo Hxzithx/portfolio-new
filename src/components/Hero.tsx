@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import hasithaPhoto from '../assets/hasitha.jpg';
 import { ScrollReveal } from './ScrollReveal';
-import ASCIIText from './ASCIIText';
+import VariableProximity from './VariableProximity';
 
 export const Hero: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   const handleScrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -24,7 +26,7 @@ export const Hero: React.FC = () => {
   return (
     <section id="home" className="hero-section section">
       <div className="hero-grid">
-        <div className="hero-content">
+        <div ref={containerRef} className="hero-content" style={{ position: 'relative' }}>
           <ScrollReveal animation="fade-up" delay={100}>
             <div className="hero-tag">
               <span className="hero-tag-pulse"></span>
@@ -35,17 +37,15 @@ export const Hero: React.FC = () => {
           <ScrollReveal animation="fade-up" delay={250}>
             <h1 className="hero-title" style={{ display: 'flex', flexDirection: 'column' }}>
               <span>Hi, I'm</span>
-              <span className="sr-only" style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', border: 0 }}>
-                Hasitha Lakruwan
-              </span>
-              <div style={{ position: 'relative', width: '100%', height: '80px', minHeight: '80px', marginTop: '10px' }}>
-                <ASCIIText
-                  text="HASITHA"
-                  enableWaves={true}
-                  asciiFontSize={6}
-                  textFontSize={160}
-                  textColor="#ffffff"
-                  planeBaseHeight={8}
+              <div style={{ marginTop: '10px' }}>
+                <VariableProximity
+                  label="Hasitha Lakruwan"
+                  className="hero-name-proximity"
+                  fromFontVariationSettings="'wght' 300, 'opsz' 9"
+                  toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                  containerRef={containerRef}
+                  radius={200}
+                  falloff="linear"
                 />
               </div>
             </h1>

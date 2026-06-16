@@ -61,14 +61,15 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   }, [threshold, once]);
 
   // Combine custom options into inline CSS variables
-  const combinedStyle: React.CSSProperties = {
+  const combinedStyle = {
     ...style,
-    ['--reveal-duration' as any]: `${duration}ms`,
-    ['--reveal-delay' as any]: `${delay}ms`,
-  };
+    '--reveal-duration': `${duration}ms`,
+    '--reveal-delay': `${delay}ms`,
+  } as React.CSSProperties;
 
   const classes = `reveal reveal-${animation} ${isVisible ? 'reveal-visible' : ''} ${className}`.trim();
 
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   return (
     <Component
       ref={elementRef as any}
@@ -78,4 +79,5 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
       {children}
     </Component>
   );
+  /* eslint-enable @typescript-eslint/no-explicit-any */
 };

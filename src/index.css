@@ -322,12 +322,20 @@ body {
   margin-bottom: 20px;
 }
 
-.hero-title span {
+.hero-title > span,
+.hero-name-proximity {
   background: linear-gradient(135deg, var(--color-primary) 10%, var(--color-accent) 50%, var(--color-secondary) 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
   animation: shine 4s linear infinite;
+  display: inline-block;
+}
+
+.hero-name-proximity span {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: inherit !important;
 }
 
 @keyframes shine {

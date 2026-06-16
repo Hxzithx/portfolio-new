@@ -46,7 +46,7 @@ const SideRays: React.FC<SideRaysProps> = ({
   className = ''
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const uniformsRef = useRef<any>(null);
+  const uniformsRef = useRef<Record<string, { value: unknown }> | null>(null);
   const rendererRef = useRef<Renderer | null>(null);
   const animationIdRef = useRef<number | null>(null);
   const meshRef = useRef<Mesh | null>(null);
@@ -210,7 +210,7 @@ void main() {
         try {
           renderer.render({ scene: mesh });
           animationIdRef.current = requestAnimationFrame(loop);
-        } catch (e) {
+        } catch {
           return;
         }
       };
@@ -231,7 +231,9 @@ void main() {
             if (loseCtx) loseCtx.loseContext();
             const canvas = renderer.gl.canvas;
             if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
-          } catch (e) {}
+          } catch {
+            // Ignore context loss
+          }
         }
         rendererRef.current = null;
         uniformsRef.current = null;
