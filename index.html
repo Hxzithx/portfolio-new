@@ -6,6 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hasitha Lakruwan</title>
     <meta name="description" content="Portfolio of Hasitha Lakruwan, Undergraduate Software Engineering Student at NIBM and Intern Software Engineer at SOFTO Solution. Specialized in React, TypeScript, PHP, Laravel, MySQL, and PostgreSQL." />
+    <script>
+      (function animateTitle() {
+        const titleText = "Hasitha Lakruwan";
+        let index = 0;
+        let timeoutId = null;
+        let cursorToggle = true;
+
+        function typeWriter() {
+          if (document.hidden) return;
+          
+          if (index <= titleText.length) {
+            document.title = titleText.substring(0, index) + (index < titleText.length ? "|" : "");
+            index++;
+            timeoutId = setTimeout(typeWriter, 120);
+          } else {
+            blinkCursor();
+          }
+        }
+
+        function blinkCursor() {
+          if (document.hidden) return;
+          document.title = titleText + (cursorToggle ? " |" : "  ");
+          cursorToggle = !cursorToggle;
+          timeoutId = setTimeout(blinkCursor, 600);
+        }
+
+        function resetTitle() {
+          clearTimeout(timeoutId);
+          index = 0;
+          typeWriter();
+        }
+
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            clearTimeout(timeoutId);
+            document.title = "Come back soon!";
+          } else {
+            resetTitle();
+          }
+        });
+
+        resetTitle();
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
