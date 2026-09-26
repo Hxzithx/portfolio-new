@@ -1,27 +1,11 @@
 import React, { useRef } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { FileText, ArrowUpRight } from 'lucide-react';
 import hasithaPhoto from '../assets/hasitha.jpg';
 import { ScrollReveal } from './ScrollReveal';
 import VariableProximity from './VariableProximity';
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const handleScrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <section id="home" className="hero-section section">
@@ -63,12 +47,14 @@ export const Hero: React.FC = () => {
 
           <ScrollReveal animation="fade-up" delay={700}>
             <div className="hero-buttons">
-              <button 
-                onClick={() => handleScrollTo('contact')} 
+              <a 
+                href="/Hasitha_Lakruwan_CV.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="btn btn-primary"
               >
-                Get in Touch <ArrowRight size={18} />
-              </button>
+                <FileText size={18} /> My CV <ArrowUpRight size={18} />
+              </a>
             </div>
           </ScrollReveal>
         </div>
