@@ -14,7 +14,7 @@ export const Experience: React.FC = () => {
     {
       role: 'Intern Software Engineer',
       company: 'SOFTO Solution',
-      period: 'March 2026 - Present',
+      period: 'March 2026 - September 2026',
       description: [
         'Developing and maintaining user-centric web applications using React and TypeScript.',
         'Collaborating on backend solutions and RESTful API development using PHP and Laravel framework.',
