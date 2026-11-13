@@ -48,12 +48,12 @@ export const Hero: React.FC = () => {
           <ScrollReveal animation="fade-up" delay={700}>
             <div className="hero-buttons">
               <a 
-                href="/Hasitha_Lakruwan_CV.pdf" 
+                href="/My_Resume.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-primary"
               >
-                <FileText size={18} /> My CV <ArrowUpRight size={18} />
+                <FileText size={18} /> My Resume <ArrowUpRight size={18} />
               </a>
             </div>
           </ScrollReveal>
